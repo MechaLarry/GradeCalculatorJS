@@ -53,19 +53,19 @@
         }
     
         function calculateNetSalary() {
-            var basicSalary = prompt("Enter your basic salary:");
-            var benefits = prompt("Enter your benefits:");
+            var grossSalary = prompt("Enter your Gross salary:");
+            var benefits = prompt("Enter your contributor benefits:");
 
             // Validate input
-            if (basicSalary === null || basicSalary === "" || isNaN(basicSalary) || basicSalary < 0 ||
+            if (grossSalary  === null || grossSalary  === "" || isNaN(grossSalary ) || grossSalary  < 0 ||
                 benefits === null || benefits === "" || isNaN(benefits) || benefits < 0) {
                 alert("Please enter valid numbers for salary and benefits.");
                 return;
             }
 
-            basicSalary = Number(basicSalary);
+            grossSalary  = Number(grossSalary);
             benefits = Number(benefits);
-            var grossSalary = basicSalary + benefits;
+            var grossSalary = grossSalary + benefits;
 
             // PAYE (Tax) calculation
             var payee;
@@ -77,7 +77,7 @@
                 payee = 2400 + (32333 - 24000) * 0.25 + (grossSalary - 32333) * 0.3;
             }
 
-            // NHIF deduction (simplified example, real rates vary)
+            // NHIF deduction
             var nhif;
             if (grossSalary <= 5999) nhif = 150;
             else if (grossSalary <= 7999) nhif = 300;
@@ -98,7 +98,7 @@
             else nhif = 1700;
 
             // NSSF deduction
-            var nssf = Math.min(grossSalary * 0.06, 1080); // Assuming 1080 KSh is the maximum NSSF deduction
+            var nssf = Math.min(grossSalary * 0.06, 1080); 
 
             // Net Salary calculation
             var netSalary = grossSalary - payee - nhif - nssf;
