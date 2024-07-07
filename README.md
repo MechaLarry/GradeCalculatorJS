@@ -1,4 +1,6 @@
 This is a simple HTML and JS program that prompts the user to input student marks and calculates the grade based on predefined grade ranges.
+Second solution is for speed demerit calculations 
+third solution is a salary calculator based on Kenyan laws
 Usage
 1. Save the code in a in a file.html format.
 2. Open the file in a web browser.
